@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TH Park - Análise de Gastos e Despesas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>TH Park - Análise de Gastos e Despesas</h1>
+    </header>
+
+    <main>
+        <!-- Seção de Upload -->
+        <section id="upload-section">
+            <h2>Carregar Planilha de Resultados</h2>
+            <input type="file" id="excel-file" accept=".xlsx, .xls">
+            <button id="analyze-btn">Analisar</button>
+            <p id="error-message" style="color: red; display: none;"></p>
+        </section>
+
+        <!-- Seção para Vendas -->
+        <section id="vendas-section">
+            <h2>Vendas</h2>
+            <table id="vendas-table">
+                <thead>
+                    <tr>
+                        <th>Produto</th>
+                        <th>Litros</th>
+                        <th>Valor por Litro</th>
+                        <th>Valor Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Dados serão preenchidos dinamicamente -->
+                </tbody>
+            </table>
+            <p><strong>Total de Vendas: R$ <span id="total-vendas">0.00</span></strong></p>
+        </section>
+
+        <!-- Seção para Despesas -->
+        <section id="despesas-section">
+            <h2>Despesas</h2>
+            <table id="despesas-table">
+                <thead>
+                    <tr>
+                        <th>Despesa</th>
+                        <th>Valor (R$)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Dados serão preenchidos dinamicamente -->
+                </tbody>
+            </table>
+            <p><strong>Total de Despesas: R$ <span id="total-despesas">0.00</span></strong></p>
+        </section>
+
+        <!-- Seção para Resultado -->
+        <section id="resultado-section">
+            <h2>Resultado</h2>
+            <p><strong>Resultado Final: R$ <span id="resultado-final">0.00</span></strong></p>
+        </section>
+
+        <!-- Seção para Gráficos -->
+        <section id="graficos-section">
+            <h2>Gráficos</h2>
+            <div class="chart-container">
+                <canvas id="vendas-chart"></canvas>
+            </div>
+            <div class="chart-container">
+                <canvas id="despesas-chart"></canvas>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 TH Park. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
